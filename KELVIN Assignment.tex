@@ -1,0 +1,460 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{setspace}
+\begin{document}
+
+\begin{center}
+	Dongzoola Dongmolar Kelvin\\
+\end{center}
+\begin{center}
+\underline{\textbf{ASSIGNMENT SOLUTION}}
+\end{center}\vspace{5mm}
+\textbf{Question (1)}\\
+\begin{enumerate}
+\item Given $A = (x,y)i$ and $B = (x,y) 
+j$ such that $A , B \in E$
+
+	\item $\nabla \cdot  E =$
+	\begin{align*}
+	&\langle \dfrac{\partial}{\partial x} , \dfrac{\partial}{\partial y} \rangle \cdot  \langle
+	Ai, Bj \rangle
+	& = \dfrac{\partial A}{\partial x} + \dfrac{\partial B}{\partial y} =
+	\dfrac{\partial (x,y)}{\partial x} + \dfrac{\partial (x,y)}{\partial y} \\
+	&= 1 + 1 \\
+	&= 2
+	\end{align*}
+	$\nabla \cdot ~ E $ is positive
+	\item $\nabla \times ~ E =$
+	\begin{align*}
+	&= \langle \dfrac{\partial}{\partial x} , \dfrac{\partial}{\partial y} \rangle \times ~ \langle
+	A\hat{i}, B\hat{j} \rangle \\
+	&=\begin{vmatrix}
+	\dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} \\
+	A & D
+	\end{vmatrix} \\
+	&=\dfrac{\partial}{\partial x} (D) - \dfrac{\partial}{\partial y} (A)\\
+	&=\dfrac{\partial (x,y)}{\partial x} - \dfrac{\partial (x,y)}{\partial y} \\
+	& = 1 - 1 \\
+	&= 0
+	\end{align*}
+	\item Given $E = \langle y , x \rangle$ and $A = (0 , -1) \quad B = (1 , 1 )$
+	\\ To find the work done on the path A to B , we need to parameterize the path with $r(t)$
+	\begin{align*}
+	&r(t) = ( 1- t) A + t B \\
+	& r(t) = (1-t) (0 , -1) + t (1, 1) \\
+	& r(t) = (0 , -1 + t) + ( t , t) \\
+	& r(t) = (t, -1 + 2t)\quad
+	\begin{cases}
+	\text{for t } \in [0,1]
+	\end{cases} \\
+	&\dfrac{dr}{dt} = (1 , 2)
+	& E = \langle y , x \rangle \\
+	& E(t) = \langle -1 + 2t , t \rangle \\
+	& E(t) \cdot \dfrac{dr}{dt} = \langle -1 + 2t , t \rangle \cdot \langle 1 , 2 \rangle\\
+	& = -1 + 4t \\
+	& W = \int_c - 1 + 4t~dt \quad \text{where c = [0,1]} \\
+	& W = \int^1_0 -1 + 4t ~ dt \\
+	& = \left[-t + 2t^ 2 \right]_0^1 \\
+	& = \left[-1 + 2(1)^ 2 \right] - \left[-0 + 2(0)^ 2 \right] \\
+	& = -1 + 2 = 1
+	\end{align*}
+\end{enumerate}
+
+
+\textbf{Question (2a)}\\\
+To show that the set of these vectors is a basis for $\mathbb{R}^3$\vspace{5mm}\\
+$\begin{bmatrix}
+1\\2\\3
+\end{bmatrix}$, $\begin{bmatrix}
+-2\\1\\0
+\end{bmatrix}$, $\begin{bmatrix}
+1\\0\\1
+\end{bmatrix}$\vspace{5mm}\\
+These two conditions must satisfy
+\begin{enumerate}
+	\item Linear Independence: Thus the vectors must be linearl independent
+	\item Spanning: The vectors must span $\mathbb{R}^3$
+\end{enumerate}
+\textbf{Check for linear independence }\vspace{5mm}\\
+$v_1=\begin{bmatrix}
+1\\2\\3
+\end{bmatrix}$, $v_2=\begin{bmatrix}
+-2\\1\\0
+\end{bmatrix}$ and $v_3=\begin{bmatrix}
+1\\0\\1
+\end{bmatrix}$\vspace{5mm}\\
+are linearly independent if the only solution to the equation\\
+$c_1v_1 + c_2v_2 + c_3v_3 = 0 $\\
+is $c_1=c_2=c_3 = 0 $, where $0 =$ $\begin{bmatrix}
+	0\\0\\0
+\end{bmatrix}$\\
+\vspace{5mm}\\
+$c_1\begin{bmatrix}
+1\\2\\3
+\end{bmatrix}$+ $c_2\begin{bmatrix}
+-2\\1\\0
+\end{bmatrix}$+ $c_3\begin{bmatrix}
+1\\0\\1
+\end{bmatrix}$= $\begin{bmatrix}
+0\\0\\0
+\end{bmatrix}$\vspace{5mm}\\
+$c_1 - 2c_2  + c_3 = 0$\\
+$2c_1 + c_2  = 0$\\
+$3c_1  + c_3 = 0$\vspace{5mm}\\
+In a matrix form,  we have\vspace{5mm}\\
+$\begin{pmatrix}
+1&-2&1\\ 2&1&0\\ 3&0&1
+\end{pmatrix}$$\begin{pmatrix}
+c_1\\c_2\\c_3
+\end{pmatrix}$ = $\begin{pmatrix}
+0\\0\\0
+\end{pmatrix}$\vspace{5mm}\\
+The matrix coefficient is:\vspace{5mm}\\
+A = $\begin{pmatrix}
+1&-2&1\\ 2&1&0\\ 3&0&1
+\end{pmatrix}$\vspace{5mm}\\
+detA = 1$\begin{vmatrix}
+1&0\\ 0&1
+\end{vmatrix}$ - (-2)$\begin{vmatrix}
+2&1\\ 3&0 \end{vmatrix}$ + 1$\begin{vmatrix}
+2&1\\ 3&0
+\end{vmatrix}$ = 1(1 - 0) + 2(2 - 0) + 1(0 - 3)\vspace{5mm}\\
+ detA =1 + 4 - 3 = 2 $\neq$ 0 \vspace{5mm}\\
+ Since the detA = 2 $\neq$ 0, implies that the only solution to the system is $c_1=c_2=c_3 = 0 $ which proves linear independence. Hence the three vectors are linearly independent \vspace{5mm}\\ 
+ \textbf{Check for Spanning}:\vspace{5mm}\\
+ As far as the set contains three linearly independent vectors in $\mathbb{R}^3$ , and the dimension of $\mathbb{R}^3$ is 3, these vectors also span $\mathbb{R}^3$. Hence any vector in $\mathbb{R}^3$ can be written as a linear combination of $v_1$, $v_2$ and $v_3$.\\
+ In conclusion, the set of vectors $v_1$, $v_2$ and $v_3$ is  a basis in $\mathbb{R}^3$ \vspace{5mm}\\
+\textbf{(2b)}. Given A is invertible  and AD = I , where I =  identity matrix\\
+To show that D = A$^{-1}$, multiple both sides of the \\
+AD = I by A$^{-1}$ , from the left since A is invertible.\\
+A$^{-1}$(AD) = A$^{-1}$I\\
+(A$^{-1}$A)D = A$^{-1}$I , where A$^{-1}$A = I\\
+ID = A$^{-1}$I , but ID = D and A$^{-1}$I = A$^{-1}$\\
+$\Longrightarrow$ D = A$^{-1}$\\
+Hence as shown.\vspace{5mm}\\
+\textbf{(2c)}. Given $v_1=\begin{bmatrix}
+1\\0\\0
+\end{bmatrix}$, $v_2=\begin{bmatrix}
+1\\1\\0
+\end{bmatrix}$ and $v_3=\begin{bmatrix}
+1\\1\\1
+\end{bmatrix}$\vspace{5mm}\\
+To determine if these vectors are linearly independent, we verify if the solution to the following equation \\
+$c_1v_1 + c_2v_2 + c_3v_3 = 0 $\\
+is $c_1=c_2=c_3 = 0 $, where $0 =$ $\begin{bmatrix}
+0\\0\\0
+\end{bmatrix}$\vspace{5mm}\\
+$c_1\begin{bmatrix}
+1\\0\\0
+\end{bmatrix}$+ $c_2\begin{bmatrix}
+1\\1\\0
+\end{bmatrix}$+ $c_3\begin{bmatrix}
+1\\1\\1
+\end{bmatrix}$= $\begin{bmatrix}
+0\\0\\0
+\end{bmatrix}$\vspace{5mm}\\
+Expanding into system of equations, we have\\
+$c_1 - 2c_2  + c_3 = 0$..........(1)\\
+$c_2 + c_3  = 0$ .............(2)\\
+$c_3 = 0$ .............(3)\\
+From eqn(3), $c_3$ = 0. Substituting the value of $c_3$ into eqn(2) gives;\\
+$c_2 + 0  = 0$ \\
+$\Longrightarrow$ $c_2  = 0$\\
+Substituting $c_2$ and $c_3$ values into eqn(1) gives,\\
+$c_1 + 0 + 0 = 0$ \\
+$\Longrightarrow$ $c_1  = 0$\\
+Since the only solution to the of equations is $c_1=c_2=c_3 = 0 $, it implies that $v_1$, $v_2$ and $v_3$ linearly independent.\vspace{5mm}\\
+\textbf{(2d)}. Given V = \{(x, $\frac{1}{2}$)$|$ x is real number\}, the set V is a subspace in $\mathbb{R}^2$ if it satisfies the conditions below\\
+1. The zero vero vector in V\\
+2. Closed under addition\\
+3. Closed under scalar multiplication\\
+\underline{check for condition 1 (zero vector)}\vspace{5mm}\\
+The zero vector in $\mathbb{R}^2$ = $\begin{bmatrix}
+0\\0
+\end{bmatrix}$. \vspace{5mm}\\
+ For V to be a subspace , (0, $\frac{1}{2}$) must be in V, since V = (x, )$|$ x is real number , however , the second component of the zero vector is  0 , not $\frac{1}{2}$.Therefore, the zero vector (0,0) is not in V, hence the first condition failed.\vspace{5mm}\\
+\underline{check for condition 2 (Closed under addition)}\vspace{5mm}\\
+Suppose given two vectors in V, say $v_1$ = ($x_1$, $\frac{1}{2}$) and $v_2$ = ($x_2$, $\frac{1}{2}$)\\
+where $x_1$ and $x_2$ are real numbers .\\
+$v_1 + v_2$ = ($x_1$, $\frac{1}{2}$) + ($x_2$, $\frac{1}{2}$) = ($x_1 + x_2$, 1) \\
+but the second component of the sum is 1, not $\frac{1}{2}$ hence $v_1 + v_2$ $\notin$ V\\
+This implies that V is not closed under addition, hence the second condition failed.\vspace{5mm}\\
+\underline{check for condition 3 (Closed under scalar multiplication)}\vspace{5mm}\\
+Consider a vector $v$ = ($x$, $\frac{1}{2}$) $\in$ V and a scalar c $\in$ $\mathbb{R}$ \\
+The scalar cv = c($x$, $\frac{1}{2}$) = ($cx$, $\frac{c}{2}$). where $\frac{c}{2}$ is generally not equal to $\frac{1}{2}$ except c = 1.\\
+Hence, scalar multiplication does not necessarily produce a vector of the form ($x$, $\frac{1}{2}$). Therefore, V is not closed under scalar multiplication.\\
+In conclusion, V is not a subspace in $\in$ $\mathbb{R}^2$ since all the condition for a vector to be a subspace failed.\vspace{8mm}\\
+\textbf{Question 3}\vspace{8mm}\\
+ Given intersections (A, B, C, D) and some
+unknowns (u, x, y, v).\\
+(3a). The valid assumptions needed to solve the problem are:
+1. Conservation of flow: the number of cars entering an intersection equals the number leaving it (no car park, disappear, or are created at intersection).\\
+2. All numbers shown in the diagram represent vehicles per hour.\\
+3. The variable u,v,x and y represent unknown traffic flows that we need to determine.\\
+4. Traffic flows are constant during rush hour.\\
+5. All turns are prohibited (since arrows show one-way streets with striaght flow only)\vspace{5mm}\\
+(3b). The system of equations based on my assumptions are:\\
+For intersection A: 450 + u = 610 + v , (inflow = outflow)\\
+u - v = 160 ...........(1)\\
+For intersection B: 520 + v = 480 + x  \\
+-v + x = 40 ............(2)\\
+For intersection C: 390 + x = 600 + y \\
+x - y = 210 .............(3)\\
+For intersection D: 640 + y = 310 + u\\
+-y + u = 330 .............(4)\vspace{5mm}\\ 
+Therefore the system of equations are:\\
+u - v = 160 ...........(1)\\
+-v + x = 40 ............(2)\\
+x - y = 210 .............(3)\\
+-y + u = 330 .............(4)\vspace{5mm}\\ 
+(3c).\\
+v = u - 160 ...........(1)\\
+x = v + 40 ............(2)\\
+y = x - 210 .............(3)\\
+u = y + 330 .............(4)\vspace{5mm}\\
+substituting back,\\
+u = (u - 160 + 40 - 210)+ 330 \\
+$\Longrightarrow$ u = u + 0 \\
+$\Longrightarrow$ 0 = 0 \\
+The system is not solvable because we cannot determine the values of the variables u,v,x and y which represent the unknown traffic flows.\vspace{5mm}\\
+(3d). Given that the number of cars (y) between intersection C and D is 200 \\
+from eqn(3) in (3c) above,
+\begin{align*}
+&y = x- 210 \quad y = 200 \\
+&x = 410 \\ \\
+& x = 40 + v \\
+& v = 370 \\ \\
+& u = 160 + v \\
+&u = 530 \\
+\end{align*}
+\begin{itemize}
+	\item \underline{ The amount of vehicles arriving At intersection A is: }
+	\begin{align*}
+	450 + u = 450 + 530 \\
+	&= 980\\
+	\end{align*}
+	\item \underline{The amount of vehicles arriving At intersection B is: }
+	\begin{align*}
+	520 + V = 520 + 370 \\
+	&= 890\\
+	\end{align*}
+	\item \underline{The amount of vehicles arriving At intersection C is: }
+	\begin{align*}
+	390 + x = 390 + 410 \\
+	&= 800\\
+	\end{align*}
+\end{itemize}
+
+
+
+\textbf{(4a)}. A vector field F is conservative if there exist a scalar potential function $\phi$ such that F = $\nabla$$\phi$. thus the curl of F must be $\nabla$ $\times$ F = 0\\
+The vector fields given are :\\
+i. $F_1$ =$ (2y + z)i + (2x + z)j + (x + y)k$\\
+ii. $F_2$ =$ (y^2 + z^2)i + (x^2 + z)j + (x^2 + y^2)k$
+
+Curl of vector field $F_1$ \\
+ $F_1$ =$ (2y + z)i + (2x + z)j + (x + y)k$\vspace{5mm}\\
+ The curl is given as $\nabla$ $\times$ $F_1$\vspace{5mm}\\
+ $\nabla$ $\times$ $F_1$ = $\begin{vmatrix}
+ i&j&k\\ \frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\ $ 2y + z$&$2x + z$&$x + y$
+ \end{vmatrix}$\vspace{5mm}\\
+= $(\frac{\partial}{\partial y}($x + y$) - \frac{\partial}{\partial z}($2x + z$))i$ - $(\frac{\partial}{\partial x}($x + y$) - \frac{\partial}{\partial z}($2y + z$))j$ + $(\frac{\partial}{\partial x}($2x + z$) - \frac{\partial}{\partial y}($2y + z$))k$\\
+= (1 - 1)i - (1 - 1)j + (2 - 2)k = 0i + 0j + 0k = 0\\
+Hence $\nabla$ $\times$ $F_1$ = 0 which implies that $F_1$ is conservative.\vspace{5mm}\\
+Curl of vector field $F_2$ \\
+$F_2$ =$ (y^2 + z^2)i + (x^2 + z)j + (x^2 + y^2)k$\vspace{5mm}\\
+$\nabla$ $\times$ $F_2$ = $\begin{vmatrix}
+i&j&k\\ \frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\  y^2 + z^2&x^2 + z&x^2 + y^2
+\end{vmatrix}$\vspace{5mm}\\
+= $(\frac{\partial}{\partial y}(x^2 + y^2) - \frac{\partial}{\partial z}(x^2 + z))i$ - $(\frac{\partial}{\partial x}(x^2 + y^2) - \frac{\partial}{\partial z}(y^2 + z^2))j$ + $(\frac{\partial}{\partial x}(x^2 + z) - \frac{\partial}{\partial y}(y^2 + z^2))k$\\
+= (2y - 1)i - (2x - 2z)j + (2x - 2y)k $\neq$ 0\\
+Since the curl is not equal to zero , thus $\nabla$ $\times$ $F_2$ $\neq$ 0 implies that  $F_2$ is not conservative.\\
+(4b). The potential function for the conservative field $F_2$ . Given that \\
+$F_1$ =$ (2y + z)i + (2x + z)j + (x + y)k$\vspace{5mm}\\
+We need tgo find a scalar potential function $\phi$(x,y,z) such that $\nabla$$\phi$ = $F_1$ that is,\\
+$\frac{\partial \phi}{\partial x}$ = 2y + z ........(1)\\
+$\frac{\partial \phi}{\partial y}$ = 2x + z ........(2)\\
+$\frac{\partial \phi}{\partial z}$ = x + z ...........(3)\\
+Integrating eqn(1) with respect to x gives,\\
+$\phi$(x,y,z) = (2y + z)x + g(y,z) ........(4) where g(y,z) is the constant\\
+Next, using $\frac{\partial \phi}{\partial y}$ = 2x + z and differentiate eqn(4) with respect to y\\
+$\frac{\partial \phi}{\partial y}$ = 2x + $\frac{\partial g}{\partial y}$\\ set this equation to 2x + z\\
+2x + $\frac{\partial g}{\partial y}$ = 2x + z\\
+ $\Longrightarrow$ $\frac{\partial g}{\partial y}$ = z\\
+ Integrating this equation with respect to y gives,\\
+ g(y,z) = zy + h(z)\\ where h(z) is a constant.\\
+ $\phi$(x,y,z) = (2y + z)x + zy + h(z) ........(5)\\
+ use $\frac{\partial \phi}{\partial z}$ = x + z and differentiate eqn(5)with respect to z\\
+ $\frac{\partial \phi}{\partial z}$ = x + y + $\frac{\partial h}{\partial z}$\\
+ x + y + $\frac{\partial h}{\partial z}$ =  x + z 
+ $\Longrightarrow$ $\frac{\partial h}{\partial z}$ = 0 \\
+ Integrating with respect to z\\
+ h(z) = c  , c is a constant.\\
+  Therefore, the final potential function for the conservative $F_1$ is\\
+  $\phi$(x,y,z) = (2y + z)x + zy + c = 2xy + xz + zy + c\vspace{8mm}\\
+ \textbf{Question (5)}\\
+ (5a). Given matrix A = $\begin{bmatrix}
+ 1&-1&0\\ -1&2&-1\\ 0&-1&1
+ \end{bmatrix}$\vspace{5mm}\\
+ The matrix A is a square  matrix because it consist of the same number of rows and columns. In addition, it is symmetric since $A^T$ = A, it is a real matrix since the entries are real numbers and it singular since the determinant is zero.\\
+ (5b). Using the Gaussian elimination to for the rank, we have\vspace{5mm}\\
+ A = $\begin{bmatrix}
+ 1&-1&0\\ -1&2&-1\\ 0&-1&1
+ \end{bmatrix}$\vspace{5mm}\\
+ $R_2 + R_1 \rightarrow R_2$\vspace{5mm}\\
+ $\begin{bmatrix}
+ 1&0&0\\ -1&1&-1\\ 0&-1&1
+ \end{bmatrix}$\vspace{5mm}\\
+ $R_3 + R_2 \rightarrow R_3$\vspace{5mm}\\
+ $\begin{bmatrix}
+ 1&0&0\\ -1&1&-1\\ 0&0&0
+ \end{bmatrix}$\vspace{5mm}\\
+ Since we have a row of zeros, the rank is determine by the non zero rows. \\
+ Hence the Rank(A) = 2\\
+ (5c). Using the charactistic equation , det(A - $\lambda$I) = 0 , where $\lambda$= eigenvalue and I = identity matrix =  $\begin{bmatrix}
+ 1&0&0\\ 0&1&0\\ 0&0&1
+ \end{bmatrix}$\vspace{5mm}\\
+ $\lambda$I = $\begin{bmatrix}
+ \lambda&0&0\\ 0&\lambda&0\\ 0&0&\lambda
+ \end{bmatrix}$\vspace{5mm}\\
+ A - $\lambda$I = $\lambda$I = $\begin{bmatrix}
+ 1 - \lambda&-1&0\\ -1&2 - \lambda&-1\\ 0&-1&1 - \lambda
+ \end{bmatrix}$\vspace{5mm}\\
+$|$ A - $\lambda$I$|$ = (1 - $\lambda$)((2 - $\lambda$)(1 - $\lambda$) - 1) - (-1)(-1(1 - $\lambda$) - 0) + 0 = 0\\
+$-\lambda^3$ + 4$\lambda^2$ - 3$\lambda$ = 0\\
+$\lambda^3$ - 4$\lambda^2$ + 3$\lambda$ = 0\\
+ $\lambda$($\lambda^2$ - 4$\lambda$ + 3) = 0\\
+ $\lambda_1 = 0$ and ($\lambda^2$ - 4$\lambda$ + 3) = 0\\
+ ($\lambda$ - 1)($\lambda$ - 3) = 0\\
+ $\Longrightarrow$ $\lambda_2 = 1$ and $\lambda_3 = 3$\\
+ The eigenvalues are $\lambda_1 = 0$, $\lambda_2 = 1$ and $\lambda_3 = 3$ \vspace{5mm}\\
+ (5d). For $\lambda_1 = 0$ , we have \\
+ (A - $\lambda_1$I)$v_1$ = 0\vspace{5mm}\\
+ $\Longrightarrow$ (A - $\lambda_1$I)$V_1$ = $\begin{bmatrix}
+ 1 - 0&-1&0\\ -1&2 - 0&-1\\ 0&-1&1 - 0
+ \end{bmatrix}v_1$ = $\begin{bmatrix}
+ 0\\0\\0
+ \end{bmatrix}$ , let $v_1 = \begin{bmatrix}
+ x\\y\\z
+ \end{bmatrix}$\vspace{5mm}\\
+ $\begin{bmatrix}
+ 1&-1&0\\ -1&2&-1\\ 0&-1&1
+ \end{bmatrix}\begin{bmatrix}
+ x\\y\\z
+ \end{bmatrix}$ = $\begin{bmatrix}
+ 0\\0\\0
+ \end{bmatrix}$\vspace{5mm}\\
+ x - y = 0 .........(1)\\
+ -x + 2y - z = 0 .........(2)\\
+ -y + z = 0 .............(3)\\
+ From eqn(3) y = z and from eqn(1) x = y\\
+ let z = t \\
+ $\Longrightarrow$ y = t and x = t \vspace{5mm}\\
+ hence $v_1$ = $\begin{bmatrix}
+ 	x\\y\\z
+ \end{bmatrix}$ =  $\begin{bmatrix}
+ t\\t\\t
+ \end{bmatrix}$ = t$\begin{bmatrix}
+ 1\\1\\1
+ \end{bmatrix}$ = $\begin{bmatrix}
+ 1\\1\\1
+ \end{bmatrix}$ \vspace{5mm}\\
+ 
+ 
+ For $\lambda_2 = 1$ , we have \\
+ (A - $\lambda_2$I)$v_2$ = 0\vspace{5mm}\\
+ $\Longrightarrow$ (A - $\lambda_2$I)$V_2$ = $\begin{bmatrix}
+ 1 - 1&-1&0\\ -1&2 - 1&-1\\ 0&-1&1 - 1
+ \end{bmatrix}v_2$ = $\begin{bmatrix}
+ 0\\0\\0
+ \end{bmatrix}$ , let $v_2 = \begin{bmatrix}
+ x\\y\\z
+ \end{bmatrix}$\vspace{5mm}\\
+ $\begin{bmatrix}
+ 0&-1&0\\ -1&1&-1\\ 0&-1&0
+ \end{bmatrix}\begin{bmatrix}
+ x\\y\\z
+ \end{bmatrix}$ = $\begin{bmatrix}
+ 0\\0\\0
+ \end{bmatrix}$\vspace{5mm}\\
+ - y = 0 .........(1)\\
+ -x + y - z = 0 .........(2)\\
+ -y = 0 .............(3)\\
+ From eqn(1) and eqn(3) y = 0 . substituting y = 0 into eqn (2)\\
+ $\Longrightarrow$ -x = z\vspace{5mm}\\
+ hence $v_2$ = $\begin{bmatrix}
+ x\\y\\z
+ \end{bmatrix}$ =  $\begin{bmatrix}
+ x\\0\\-x
+ \end{bmatrix}$ = x$\begin{bmatrix}
+ 1\\0\\-1
+ \end{bmatrix}$ = $\begin{bmatrix}
+ 1\\0\\-1
+ \end{bmatrix}$ 
+ 
+ For $\lambda_3 = 3$ , we have \\
+ (A - $\lambda_3$I)$v_3$ = 0\vspace{5mm}\\
+ $\Longrightarrow$ (A - $\lambda_3$I)$V_3$ = $\begin{bmatrix}
+ 1 - 3&-1&0\\ -1&2 - 3&-1\\ 0&-1&1 - 3
+ \end{bmatrix}v_3$ = $\begin{bmatrix}
+ 0\\0\\0
+ \end{bmatrix}$ , let $v_3 = \begin{bmatrix}
+ x\\y\\z
+ \end{bmatrix}$\vspace{5mm}\\
+ $\begin{bmatrix}
+ -2&-1&0\\ -1&-1&-1\\ 0&-1&-2
+ \end{bmatrix}\begin{bmatrix}
+ x\\y\\z
+ \end{bmatrix}$ = $\begin{bmatrix}
+ 0\\0\\0
+ \end{bmatrix}$\vspace{5mm}\\
+ - 2x - y = 0 .........(1)\\
+ -x - y - z = 0 .........(2)\\
+ -y -2z = 0 .............(3)\\
+ From eqn(3) y = -2z . substituting y = -2z into eqn (2)\\
+ $\Longrightarrow$ x = z\vspace{5mm}\\
+ hence $v_3$ = $\begin{bmatrix}
+ x\\y\\z
+ \end{bmatrix}$ =  $\begin{bmatrix}
+ z\\-2z\\z
+ \end{bmatrix}$ = z$\begin{bmatrix}
+ 1\\-2\\1
+ \end{bmatrix}$ = $\begin{bmatrix}
+ 1\\-2\\1
+ \end{bmatrix}$ 
+ Therefore, the eigenvectors are :\vspace{5mm}\\
+ $v_1$ = $\begin{bmatrix}
+ 1\\1\\1
+ \end{bmatrix}$, $v_2$ = $\begin{bmatrix}
+ 1\\0\\-1
+ \end{bmatrix}$, and $v_3$ = $\begin{bmatrix}
+ 1\\-2\\1
+ \end{bmatrix}$\vspace{5mm}\\
+ (5e). Check for orthogonal.Two vectors are orthongonal if their dot production is 0.\vspace{5mm}\\
+  $v_1 \cdotp v_2$ = $\begin{bmatrix}
+  1&1&1
+  \end{bmatrix}$ $\cdotp$$\begin{bmatrix}
+  1\\0\\-1
+  \end{bmatrix}$ = 1 + 0 - 1 = 0 \vspace{5mm}\\
+  
+  $v_1 \cdotp v_3$ = $\begin{bmatrix}
+  1&1&1
+  \end{bmatrix}$ $\cdotp$$\begin{bmatrix}
+  1\\-2\\1
+  \end{bmatrix}$ = 1 - 2 + 1 = 0 \vspace{5mm}\\
+  
+  $v_2 \cdotp v_3$ = $\begin{bmatrix}
+  1&0&-1
+  \end{bmatrix}$ $\cdotp$$\begin{bmatrix}
+  1\\-2\\1
+  \end{bmatrix}$ = 1 + 0 - 1 = 0 \vspace{5mm}\\
+  Therefore the three eigenvectors are orthogonal
+  
+\end{document}

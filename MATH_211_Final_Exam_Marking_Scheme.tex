@@ -1,0 +1,687 @@
+\documentclass[12pt]{exam}
+\usepackage{amsmath}
+%\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathptmx}
+\usepackage{pstricks}
+\usepackage{psfrag}
+\usepackage{pst-plot}
+\usepackage{epsfig}
+\usepackage{epsf}
+\usepackage{tikz,pgfplots}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{mathtools}
+\usepackage{ragged2e}
+\usepackage{wasysym}
+\usepackage{textcomp}
+\usepackage{wrapfig}
+
+\setlength{\topmargin}{-0.6in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\pretolerance=4000
+\parindent = 0in
+\textwidth = 7in
+\textheight = 10in
+\headheight=10pt
+\setlength{\headsep}{15pt}
+\coverheader{\textbf{Math 211: Multivariable Calculus \& Linear Algebra}}{}
+  {\textbf{December 15, 2016}}
+\headrule
+\header{\textbf{Math 211, Second Semester}}
+ {\textbf{End of Semester Examination}}
+ {\emph{Page \thepage~of \numpages}}
+\pagestyle{head}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\blankbox}[2]{\fbox{\rule{#1}{0in}\rule{0in}{#2}}}
+
+\input epsf
+\newdimen\epsfxsize
+
+
+%\printanswers
+\framedsolutions
+\shadedsolutions
+\boxedpoints
+\addpoints
+
+%vector description
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\va}{\mathbf{a}}
+\newcommand{\vb}{\mathbf{b}}
+\newcommand{\vc}{\mathbf{c}}
+\newcommand{\vC}{\mathbf{C}}
+\newcommand{\vd}{\mathbf{d}}
+\newcommand{\ve}{\mathbf{e}}
+\newcommand{\vi}{\mathbf{i}}
+\newcommand{\vj}{\mathbf{j}}
+\newcommand{\vk}{\mathbf{k}}
+\newcommand{\vn}{\mathbf{n}}
+\newcommand{\vm}{\mathbf{m}}
+\newcommand{\vr}{\mathbf{r}}
+\newcommand{\vs}{\mathbf{s}}
+\newcommand{\vu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\vw}{\mathbf{w}}
+\newcommand{\vx}{\mathbf{x}}
+\newcommand{\vy}{\mathbf{y}}
+\newcommand{\vz}{\mathbf{z}}
+\newcommand{\vzero}{\mathbf{0}}
+\newcommand{\vN}{\mathbf{N}}
+\newcommand{\vV}{\mathbf{V}}
+
+\newcommand{\vB}{\mathbf{B}}
+\newcommand{\vE}{\mathbf{E}}
+\newcommand{\vF}{\mathbf{F}}
+\newcommand{\vD}{\mathbf{D}}
+\newcommand{\vA}{\mathbf{A}}
+%\newcommand{\proj}{\text{proj}}
+%\newcommand{\comp}{\text{comp}}
+
+%column vector 
+\newcommand*\colvec[3][]{
+	\begin{bmatrix}\ifx\relax#1\relax\else#1\\\fi#2\\#3\end{bmatrix}
+}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                 %
+%                 START OF PROBLEMS               %
+%                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% problem 1
+\question
+\textbf{(\pointsofquestion{1} total points)} $\ $
+The following figures show vector fields derived from real
+		systems:
+	\begin{itemize}
+		\item the electric field $\vE$ emanating from a
+		point charge near a conducting sphere (also shown are constant
+		lines of potential $\nabla f = \vE$).
+		\item the velocity field $\vV$ surrounding Jupiter's Great Red Spot.
+	\end{itemize}
+	For these vector fields, state whether the following quantities are positive, negative, zero, or indeterminate from the given information.
+ \textit{Justify} your answer in each case for part (a) and (b) without any calculations.
+	\begin{parts}
+		\part[6] $\nabla \cdot \vE$ at points $\vA$ and $\vB$. Can you make same conclusion for the entire region?
+		\part[6] $\nabla \times \vE$ at points $\vA$ and $\vD$. Can you make same conclusion for the entire region?
+%		\part[3] Are these two quantities 
+		\part[6] Suppose $\vE= \langle y, x\rangle$, compute the work done by moving from $A(0, -1)$ to $B(1, 1)$ along any path between the two points. 
+	\end{parts}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=.8]{Screenshot_1.png}
+	\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{solution}
+	\begin{enumerate}
+		\item[1a) ]  $\nabla \cdot \vE> 0$ at both points. \hfill[\textbf{A2}]\\
+					 At each point, there are more vector arrows that leaves its neighborhood than enters the same neighborhood. \hfill [\textbf{B2}]\\
+					 No. \hfill[\textbf{A1}]\\
+					 Reason: From the reasons above, At point \textbf{D} divergence is zero. \hfill [\textbf{B1}]
+		%
+		\item[1b) ] $\nabla \times \vE= 0$ at both points. \hfill [\textbf{A2}]\\
+		Reason: any 'small' paddle placed there will move in the direction of the vector arrows.  \hfill[\textbf{B2}]\\
+		No. \hfill[\textbf{A1}]\\
+		Reason: The field is not irrotational and/or Conservative at all points. Select a point other than \textbf{A, B,} and \textbf{D} to justify. \hfill[\textbf{B1}]
+		%
+		\item[1c)] Parametric curve from $A$ to $B$ is $\vr(t)=\langle t, 2t-1\rangle$ \hfill \textbf{M2}\\
+		
+		calculates $\vE(\vr(t))=\langle 2t-1, t\rangle$ \hfill \textbf{M1}\\
+		
+		workdone is given by $W=\int_{0}^{1}\vE(\vr(t))\cdot \vr'(t)dt$\\
+		$$\vE(\vr(t))\cdot \vr'(t) = 4t-1$$		
+		$\therefore W=1\text{N} \hfill \textbf{M2+A1}$
+	\end{enumerate}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% problem 2
+\question
+\textbf{(\pointsofquestion{2} total points)} $\ $
+\begin{parts}
+\part[6] Show that $\left\{\begin{bmatrix}
+1\\
+2\\
+3
+\end{bmatrix},
+\begin{bmatrix}
+-2\\
+1\\
+0
+\end{bmatrix},
+\begin{bmatrix}
+1\\
+0\\
+1
+\end{bmatrix}\right\}$ is a basis for $\mathbb{R}^3$.	
+\part[3] Use matrix algebra to show that if $A$ is invertible and $D$ satisfies $AD=I$, then $D=A^{-1}$, where $I$ is an identity matrix.
+\part[4] 	Determine whether or not $\vv_1, \,\vv_2 $ and $\vv_3$ are linearly independent.\\
+Where $\vv_1=\begin{bmatrix}
+1\\ 0\\0
+\end{bmatrix},
+\vv_2 = \begin{bmatrix}
+1\\
+1\\
+0
+\end{bmatrix}$ and $\vv_3=\begin{bmatrix}
+1\\
+1\\
+1
+\end{bmatrix}$
+
+\part[7] Let $\vV=\left\{(x, \frac{1}{2})\,|x\, \text{ is real number}\right\}$ with standard operations. Show whether or not $\vV$ is a subspace in $\mathbb{R}^2$. 	
+\end{parts}
+%%%%
+\begin{solution}
+	
+	\begin{enumerate}
+		\item[(a)] Let $A=\begin{bmatrix}
+		1&-2&1\\
+		2&1&0\\
+		3&0&1
+		\end{bmatrix}$, 
+$\text{dim}(A)=3$\hfill \textbf{[2 marks]}\\
+$\left|\begin{matrix}
+1&-2&1\\
+2&1&0\\
+3&0&1
+\end{matrix} \right| =2$, this implies that the columns of matrix $A$ are linearly independent.\hfill \textbf{[]4 marks}\\
+Since the dimension of $A$ is 3 and the columns of A are linearly independent then $\left\{\begin{bmatrix}
+1\\
+2\\
+3
+\end{bmatrix},
+\begin{bmatrix}
+2\\
+1\\
+0
+\end{bmatrix},
+\begin{bmatrix}
+1\\
+0\\
+1
+\end{bmatrix}\right\}$ is a basis for $\mathbb{R}^3$. 
+		\item[(b)] Since A is invertible then $\mathrm{A}^{-1}$ exists. $A^{-1}AD = AI \, \implies \,  ID = A^{-1}I$ Since $I$ is an identity matrix $D=\mathrm{A}^{-1}$. \hfill \textbf{B3}
+		\item[(c)]  Let $A =\begin{bmatrix}
+1 & 1 & 1\\
+0 & 1 & 1\\
+0 & 1 & 1\end{bmatrix}$. $A$ is a square matrix and so det$(A)$=1. \hfill\textbf{[2 marks]}\\
+Hence the set $\vv_1,\, \vv_2,$ and $ \vv_3$ is linearly independent. \hfill\textbf{[2 marks]}\\
+\textbf{OR}. The set $\vv_1,\, \vv_2,$ and $ \vv_3$ is linearly independent if there exist constants such that $c_1\vv_1+c_2\vv_2+c_3\vv_3=0$ and $c_1=c_2=c_3=0.$
+		\item[(d)] $\vV$ is a subspace if closed under vector addition and scalar multiplication operations in $\mathbb{R}^2$. $\vV$ is not closed under vector addition and scalar multiplication operations and hence not a vector space in $\mathbb{R}^2$
+\end{enumerate}
+\end{solution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+% problem 3
+\question
+\textbf{(\pointsofquestion{3} total points)} $\ $
+At rush hours, traffic congestion is encounted at street intersections shown in the figure below. The city wishes to improve the traffic signals at these corners to improve the flow of traffic. All street are one-way and the directions are indicated by the arrows. The $u,\,v,\,x\,$ and $y$ represents the number of cars leaving or arriving at an intersection and $A,B,C $ and $D$ represent the intersections.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.8]{traffic.png}
+\end{figure}
+\begin{parts}
+\part[3] State all \textit{valid} assumptions necessary to solve this problem.	
+\part[6] Based on your assumptions, set up a system of linear equations.	
+\part[10] If your system is solvable, state whether it has (a) a unique solution, (b) infinitely many solutions. If the system is \textit{not} solvable state why. \textit{Justify} your answer in each case.	
+\part[3] Suppose on average the amount of traffic between intersections \textit{C} and \textit{D} is 200 vehicles per hour, find the amount vehicles arriving at intersections $ A$, $B$ and $C$.
+\end{parts}  
+%Scheme
+\begin{solution}
+	\begin{enumerate}
+		\item[(a)]
+		\begin{enumerate}
+			\item[(i)] All streets are one-way. \hfill \textbf{A1}
+			\item[(ii)]The number of cars arriving at an intersection is equal to the number of cars leaving the intersection. \hfill \textbf{A1}
+			\item[(iii)]The varibles $u, v, x$ and $y$ are positive integers, since they represent number of cars. \hfill \textbf{A1}
+		\end{enumerate}
+		\item[(b)] Denote $u$ the number of cars leaving intersection D toward intersection A.\\
+		Denote $v$ the number of cars leaving intersection A toward B.\\
+		Denote $x$ the number of cars leaving intersection B toward intersection C.\\
+		Denote $y$ the number of cars leaving intersection C toward intersection D. \hfill \textbf{M1}\\ \\
+		From assumption (ii), we have\\
+		\underline{At intersection A}\\
+		$u+450 = 610+v \implies u-v=160$ \hfill \textbf{M0.5}\\
+		\underline{At intersection B}\\
+		$520+v = 480+x \implies v-x=-40$\hfill \textbf{M0.5}\\
+		\underline{At intersection C}\\
+		$x+390= y+600 \implies x-y=210$\hfill \textbf{M0.5}\\
+		\underline{At intersection D}\\
+		$y+640 = u+310 \implies y-u=-330$\hfill \textbf{M0.5}\\ \\
+		Hence we have\\
+		\begin{align*}
+		u-v &=160\qquad\qquad\qquad \textbf{A0.5}\\
+		v-x &=-40\qquad\qquad\qquad \textbf{A0.5}\\
+		x-y &=210\qquad\qquad\qquad \textbf{A0.5}\\
+		y-u &=-330\qquad\qquad\qquad \textbf{A0.5}
+		\end{align*}
+		\item[(c)] The system is solvable \hfill\textbf{[2 marks]} 
+		\begin{align*}
+		& \left(
+		\begin{matrix}
+		1 & -1 & 0 & 0 \\
+		0 & 1 & -1 & 0 \\
+		0 & 0 & 1 & -1\\
+		-1 & 0 & 0 & 1 
+		\end{matrix}
+		\right.\left|\left.
+		\begin{matrix}
+		160\\ -40 \\ 210 \\ -330
+		\end{matrix}
+		\right)\right. 
+		\xrightarrow{\text{R1}+\text{R4}\to\text{R4}} 
+		\left(
+		\begin{matrix}
+		1 & -1 & 0 & 0 \\
+		0 & 1 & -1 & 0 \\
+		0 & 0 & 1 & -1\\
+		0 & -1 & 0 & 1 
+		\end{matrix}
+		\right.\left|\left.
+		\begin{matrix}
+		160\\ -40 \\ 210 \\ -170
+		\end{matrix}
+		\right)\right.
+		\xrightarrow{\text{R2}+\text{R4}\to\text{R4}} \\
+		& \left(
+		\begin{matrix}
+		1 & -1 & 0 & 0 \\
+		0 & 1 & -1 & 0 \\
+		0 & 0 & 1 & -1\\
+		0 & 0 & -1 & 1 
+		\end{matrix}
+		\right.\left|\left.
+		\begin{matrix}
+		160\\ -40 \\ 210 \\ -210
+		\end{matrix}
+		\right)\right.
+		\xrightarrow{\text{R3}+\text{R4}\to\text{R4}} 
+		\left(
+		\begin{matrix}
+		1 & -1 & 0 & 0 \\
+		0 & 1 & -1 & 0 \\
+		0 & 0 & 1 & -1\\
+		0 & 0 & 0& 0 
+		\end{matrix}
+		\right.\left|\left.
+		\begin{matrix}
+		160\\ -40 \\ 210 \\ 0
+		\end{matrix}
+		\right)\right.
+		\xrightarrow{\text{R2}+\text{R3}\to\text{R2}} \\
+		& \left(
+		\begin{matrix}
+		1 & -1 & 0 & 0 \\
+		0 & 1 & 0& -1 \\
+		0 & 0 & 1 & -1\\
+		0 & 0 & 0& 0 
+		\end{matrix}
+		\right.\left|\left.
+		\begin{matrix}
+		160\\ 170 \\ 210 \\ 0
+		\end{matrix}
+		\right)\right.
+		\xrightarrow{\text{R1}+\text{R2}\to\text{R1}}
+		\left(
+		\begin{matrix}
+		1 & 0 & 0 & -1 \\
+		0 & 1 & 0& -1 \\
+		0 & 0 & 1 & -1\\
+		0 & 0 & 0& 0 
+		\end{matrix}
+		\right.\left|\left.
+		\begin{matrix}
+		330\\ 170 \\ 210 \\ 0
+		\end{matrix}
+		\right)\right.
+		=  \left(
+		\begin{matrix}
+		1 & 0 & 0 & -1 \\
+		0 & 1 & 0& -1 \\
+		0 & 0 & 1 & -1
+		\end{matrix}
+		\right.\left|\left.
+		\begin{matrix}
+		330\\ 170 \\ 210
+		\end{matrix}
+		\right)\right.
+		\end{align*}
+		\textbf{M1} for $\left(\begin{matrix}
+			1 & -1 & 0 & 0 \\
+			0 & 1 & -1 & 0 \\
+			0 & 0 & 1 & -1\\
+			-1 & 0 & 0 & 1 
+		\end{matrix}
+		\right.\left|
+		\begin{matrix}
+			160\\ -40 \\ 210 \\ -330
+		\end{matrix}\right)$ written as augmented matrix.\\
+		
+		\textbf{M4} for accurate row operations.\\
+		\textbf{A2} if $\left(
+		\begin{matrix}
+			1 & 0 & 0 & -1 \\
+			0 & 1 & 0& -1 \\
+			0 & 0 & 1 & -1\\
+			0 & 0 & 0 & 0		
+		\end{matrix}
+		\left|
+		\begin{matrix}
+			330\\ 170 \\ 210 \\ 0
+		\end{matrix} \right)\right.$  is identified as result of operations.
+		Hence
+		\begin{align*}
+		u-y &=330\\
+		v-y &=170\qquad\quad \text{\textbf{[1 mark]}}\\
+		x-y &=210
+		\end{align*}
+		The system is consistent and since there is a free variable or the size of the augmented matrix reduces by 1  or the number of rows of the system reduces by 1, then there are many possible solutions. \hfill \textbf{B2}
+		\item[(d)] Given $y=200 \implies u= 330+y = 530, v = 370, x = 410.$ \hfill \textbf{M2}\\
+		The number of vehicles arriving at the intersections:\\
+		\textbf{A:} 980 cars \quad \textbf{B:} 890 cars\\
+		\textbf{C:} 800 cars \hfill\textbf{[1 mark].}
+	\end{enumerate}
+\end{solution}
+%problem 4
+\question
+\textbf{(\pointsofquestion{4} total points)} $\ $
+Given the following vector fields:
+\begin{enumerate}
+	\item[i.]  $\vF = (2y+z)\vi + (2x+z)\vj + (x+y)\vk$
+	\item[ii.] $\vF = (y^2 + z^2)\vi + (x^2 + z)\vj + (x^2+y^2)\vk$
+\end{enumerate}
+\begin{parts}
+	\part[8] Determine which of the above vector fields is conservative.
+	\part[10] Find a potential function for the conservative field.
+\end{parts}
+\begin{solution}
+	Necessary condition for $\vF(x,y,z)=\langle P(x,y,z), Q(x, y, z), R(x, y, z)\rangle$ to be conservative, Curl($\vF$)=0 
+	\begin{align*}
+	\frac{\partial P}{\partial z}=\frac{\partial R}{\partial x} \\
+	\frac{\partial Q}{\partial x} =\frac{\partial P}{\partial y} \\
+	\frac{\partial Q}{\partial z} =\frac{\partial R}{\partial y}
+	\end{align*}
+	\begin{enumerate}
+		\item[4a)] For i) $\vF$ is conservative. \hfill \textbf{A1}\\
+					Reason: All above conditions is satisfied. \hfill \textbf{M3}
+		\item[ ]	For ii) $\vF$ is not conservative. \hfill \textbf{A1}\\
+					Reason: \hfill \textbf{M3}\\
+					$\frac{\partial P}{\partial z}\neq\frac{\partial R}{\partial x}$\\
+					and/or $\frac{\partial Q}{\partial x} =\frac{\partial P}{\partial y}$\\
+					and/or $\frac{\partial Q}{\partial z} \neq \frac{\partial R}{\partial y}.$
+					
+		\item[4b)] If $\vF$ is conservative, then $\vF=\nabla\phi,$ where $\phi(x,y,z)$ is the potential function. \hfill \textbf{M1.0}\\ \\
+		$\phi_x=2y+z, \, \phi_y=2x+z, \, \phi_z=x+y$ \hfill \textbf{M0.5}\\ \\
+		Integrate $\phi_x$ w.r.t $x$ gives $\phi(x,y,z)=2xy+zx+C(y,z).$ \hfill \textbf{M1.5}\\ \\
+		$\phi_y=2x+C_y(y,z)$ and integrate w.r.t $y$ to find $C(y,z)$\hfill \textbf{M1.0}\\ \\
+		$C(y,z)=zy+C(z).\implies\phi(x,y,z)=2xy+zx + zy+C(z)$ \hfill \textbf{M1.5}\\ \\
+		$\phi_z(x,y,z)=x+y+C_z(z)$ if integrate w.r.t $z$, $C(z)=0$ \hfill \textbf{M1.5}\\ \\
+		$\therefore \phi(x,y,z)=2xy+zx + zy$ is the potential function. \hfill \textbf{A2.0} 
+					
+	\end{enumerate}
+\end{solution}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%problem 5
+\question
+\textbf{(\pointsofquestion{5} total points)} $\ $
+Given that  $A=\begin{bmatrix} 1 & -1 & 0 \\ -1 & 2  &-1  \\ 0&-1 & 1\end{bmatrix}$, is 3$\times$3 matrix
+\begin{parts}
+\part[2] What type of matrix is $A$? Explain				
+\part[2] What is the rank of $A$?							
+\part[8] Find the eigenvalue(s) of $A$.					
+\part[8] Find the corresponding eigenvector(s) for the eigenvalue(s) in part (c).	
+\part[2] Are the eigenvectors orthogonal?
+\end{parts}
+%solution
+\begin{solution}
+$\mathrm{A}=\begin{pmatrix}
+1 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1  & 1 \\
+\end{pmatrix}$
+\begin{enumerate}
+	\item[(a)]The matrix A is a symmetric matrix. A is a symmetric matrix since $\mathrm{A}^{T} = \mathrm{A}$. \hfill \textbf{A2}. \hfill \textbf{E1} if talks about singularity.
+	\item[(b)] $\mathrm{Rank(A)} = 2$ which is equal to the number of linearly independent rows since row 2 is a linear combination of row 1 and row 3 . \textbf{M1+B1}
+	\item[(c)]$\mathrm{A}=\begin{pmatrix}
+	1 & -1 & 0 \\
+	-1 & 2 & -1 \\
+	0 & -1  & 1 \\
+	\end{pmatrix}$ and $\mathrm{I}=\begin{pmatrix}
+	1 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & 1 \\
+	\end{pmatrix}$. \hfill \textbf{M1}\\ \\
+	$\mathrm{det}(\mathrm{A}-\lambda \mathrm{I})=-\lambda(1-\lambda)(3-\lambda) = 0$.\hfill \textbf{M2}\\
+	$\implies \lambda = 0,  \lambda = 1$ and $\lambda = 3.$ \hfill \textbf{M2}\\
+	Therefore, the eigenvalues for matrix A are $ \lambda = 0,  \lambda = 1$ and  $\lambda = 3.$ \hfill \textbf{A3}.
+	\item[(d)]To find the eigenvector, solve $(\mathrm{A}-\lambda \mathrm{I}) \mathrm{\bf v}= 0.$ \\
+	For $\underline{\lambda = 0}$ \hfill \textbf{M2}\\ \\
+	$\begin{pmatrix}
+	1 & -1 & 0 \\
+	-1 & 2 & -1 \\
+	0 & -1  & 1 \\
+	\end{pmatrix}
+	\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3\\
+	\end{pmatrix} = \begin{pmatrix}
+	0 \\
+	0 \\
+	0\\
+	\end{pmatrix} $ 
+	
+	\begin{align*}
+	& \left(
+	\begin{matrix}
+	1 & -1 & 0  \\
+	-1 & 2 & -1\\
+	0 & -1 &  1 
+	\end{matrix}
+	\right.\left|\left.
+	\begin{matrix}
+	0\\ 0 \\ 0
+	\end{matrix}
+	\right)\right. 
+	\xrightarrow{\text{R1}+\text{R2}\to\text{R2}} 
+	\left(
+	\begin{matrix}
+	1 & -1 & 0  \\
+	0 & 1 & -1\\
+	0 & -1 &  1 
+	\end{matrix}
+	\right.\left|\left.
+	\begin{matrix}
+	0\\ 0 \\ 0
+	\end{matrix}
+	\right)\right.
+	\xrightarrow{\text{R2}+\text{R3}\to\text{R3}} 
+	& \left(
+	\begin{matrix}
+	1 & -1 & 0  \\
+	0 & 1 & -1\\
+	0 & 0 &  0 
+	\end{matrix}
+	\right.\left|\left.
+	\begin{matrix}
+	0\\ 0 \\ 0
+	\end{matrix}
+	\right)\right.
+	\end{align*}
+	Now \begin{align*}
+	x_1-x_2 &= 0\\
+	x_2-x_3 &= 0
+	\end{align*}
+	This implies $ \bf{v_1} = \begin{pmatrix}
+	1 \\
+	1 \\
+	1\\
+	\end{pmatrix}$ \hfill \textbf{M1+A1}
+	
+	For $\underline{\lambda = 1}$\\ \\
+	$\begin{pmatrix}
+	0 & -1 & 0 \\
+	-1 & 1 & -1 \\
+	0 & -1  & 0 \\
+	\end{pmatrix}\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3\\
+	\end{pmatrix} = \begin{pmatrix}
+	0 \\
+	0 \\
+	0\\
+	\end{pmatrix} $
+	
+	\begin{align*}
+	& \left(
+	\begin{matrix}
+	0 & -1 & 0  \\
+	-1 & 1 & -1\\
+	0 & -1 &  0 
+	\end{matrix}
+	\right.\left|\left.
+	\begin{matrix}
+	0\\ 0 \\ 0
+	\end{matrix}
+	\right)\right. 
+	\xrightarrow{\text{R2}\to\text{R1}} 
+	\left(
+	\begin{matrix}
+	-1 & 1 & -1  \\
+	0 & -1 & 0\\
+	0 & -1 &  0 
+	\end{matrix}
+	\right.\left|\left.
+	\begin{matrix}
+	0\\ 0 \\ 0
+	\end{matrix}
+	\right)\right.
+	\xrightarrow{\text{R3}-\text{R1}\to\text{R3}} 
+	& \left(
+	\begin{matrix}
+	-1 & 1 & -1  \\
+	0 & -1 & 0\\
+	0 & 0 &  0 
+	\end{matrix}
+	\right.\left|\left.
+	\begin{matrix}
+	0\\ 0 \\ 0
+	\end{matrix}
+	\right)\right.
+	\end{align*}
+	Now \begin{align*}
+	-x_1+x_2 -x_3&= 0\\
+	x_2 &= 0
+	\end{align*}
+	This implies $ \bf{v_2} = \begin{pmatrix}
+	1 \\
+	0 \\
+	-1\\
+	\end{pmatrix}$ or  $\begin{pmatrix}
+	-1 \\
+	0\\
+	1\\
+	\end{pmatrix}$ \hfill\textbf{M1+A1}
+	
+	For $\underline{\lambda = 3}$\\ \\
+	$\begin{pmatrix}
+	-2 & -1 & 0 \\
+	-1 & -1 & -1 \\
+	0 & -1  & -1 \\
+	\end{pmatrix}\begin{pmatrix}
+	x_1 \\
+	x_2 \\
+	x_3\\
+	\end{pmatrix} = \begin{pmatrix}
+	0 \\
+	0 \\
+	0\\
+	\end{pmatrix} $
+	
+	\begin{align*}
+	& \left(
+	\begin{matrix}
+	-2 & -1 & 0 \\
+	-1 & -1 & -1 \\
+	0 & -1  & -1 \\
+	\end{matrix}
+	\right.\left|\left.
+	\begin{matrix}
+	0\\ 0 \\ 0
+	\end{matrix}
+	\right)\right. 
+	\xrightarrow{ \text{R2}-\text{R1}} 
+	\left(
+	\begin{matrix}
+	1 & 0 & -1 \\
+	-1 & -1 & -1 \\
+	0 & -1  & 0 \\
+	\end{matrix}
+	\right.\left|\left.
+	\begin{matrix}
+	0\\ 0 \\ 0
+	\end{matrix}
+	\right)\right.
+	\xrightarrow{\substack{\text{R3}-\text{R2} \\
+			\text{R1}+\text{R2}}} 
+	& \left(
+	\begin{matrix}
+	-1 & 0 & -1  \\
+	0 & -1 & 2\\
+	0 & 0 &  0 
+	\end{matrix}
+	\right.\left|\left.
+	\begin{matrix}
+	0\\ 0 \\ 0
+	\end{matrix}
+	\right)\right.
+	\end{align*}
+	Now \begin{align*}
+	x_1-x_3 &= 0\\
+	-x_2-2x_3 &= 0
+	\end{align*}
+	This implies $ \bf{v_3} = \begin{pmatrix}
+	1 \\
+	-2 \\
+	1\\
+	\end{pmatrix}$ or  $\begin{pmatrix}
+	-1 \\
+	2\\
+	1\\
+	\end{pmatrix}$ \hfill \textbf{M1+A1}
+	
+	\item[(e)] If $\vv_i\cdot\vv_j=0,$ $i\neq j$ and $i\text{ and } j$ are positive integers, the set $\vv_i$'s is orthogonal.
+	\begin{align*}
+	&\vv_1\cdot\vv_2=\langle 1, 1, 1\rangle\cdot\langle 1, 0, 1\rangle = 0\\
+	&\vv_1\cdot\vv_3=\langle 1, 1, 1\rangle\cdot\langle 1, -2, 1\rangle = 0\\
+	&\vv_2\cdot\vv_3=\langle 1, 0, -1\rangle\cdot\langle 1, -2, 1\rangle = 0
+	\end{align*}
+	Therefore the eigenvectors are orthogonal \\
+	\hfill \textbf{[2 marks]}
+\end{enumerate}
+\end{solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\vfill\vfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%problem 6
+
+\end{questions}
+
+\end{document}
